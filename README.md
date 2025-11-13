@@ -122,6 +122,36 @@ This project demonstrates how to deploy a **highly available and scalable web ap
 
 ---
 
+I used CloudFormation  to create template.yml that also already added to my repo and the aim of that file to create resources that i used in this project like 
+
+| Section                           | Purpose                                                                     | What It Creates                     
+| --------------------------------- |-----------------------------------------------------------------------------|--------------------------------------------------------- |
+| **Parameters**                    | Defines input variables (like EC2 key pair, instance type, DB credentials). | Lets you reuse the template easily.                                                                                               
+| **VPC, Subnets, Gateway, Routes** | Creates the **network environment**.                                        | A VPC with 2 public subnets and internet access.                                                                                    
+| **Security Groups**               | Define **firewall rules**.                                                  | - `ALBSG`: allows HTTP from the internet.<br> - `WebServerSG`: allows HTTP from ALB.<br> - `RDSSG`: allows DB access from EC2 only. 
+| **LaunchTemplate**                | Defines how each EC2 instance should be configured.                         | Installs Apache and displays a test web page.                                                                                       
+| **ALB (Load Balancer)**           | Distributes incoming requests.                                              | Spreads traffic across EC2 instances.                                                                                               
+| **TargetGroup & Listener**        | Connect ALB to EC2 instances.                                               | Handles health checks and traffic forwarding.                                                                                       
+| **AutoScalingGroup (ASG)**        | Enables scaling up/down automatically.                                      | Adds or removes EC2 instances based on traffic.                                                                                     
+| **RDSInstance**                   | Creates a managed MySQL database.                                           | Stores application data securely in the same VPC.                                                                                   
+| **CloudWatch + SNS**              | Enables monitoring and alerts.                                              | Sends an email if CPU > 70% for 5 minutes.                                                                                          
+| **Outputs**                       | Displays useful values after deployment.                                    | The ALB DNS name (URL of your app).                             
+
+
+and also i used aws cli to upload template.yaml 
+
+aws cloudformation create-stack \
+  --stack-name scalable-webapp \
+  --template-body file://template.yaml \
+  --parameters \
+    ParameterKey=KeyName,ParameterValue=manara-key \
+    ParameterKey=DBUsername,ParameterValue=admin \
+    ParameterKey=DBPassword,ParameterValue=admin \
+  --capabilities CAPABILITY_IAM
+
+
+
+
 #  Learning Outcomes
 - Deploy a secure and scalable web application on AWS EC2.
 - Implement high availability with ALB and ASG.

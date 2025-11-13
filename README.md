@@ -11,8 +11,11 @@
 | **SNS**                             | Sends alerts triggered by CloudWatch metrics.                                                  |
 | **High Availability & Scalability** | Achieved through ALB + ASG combination.                                                        |
 | **Monitoring & Alerts**             | CloudWatch + SNS integration ensures proactive monitoring.                                     |
-####################################
+
+
+
 Explanation of Each Component
+-------------------------------------------------------
 
 User
 
@@ -66,7 +69,7 @@ Sends notifications (email/SMS) to admins when CloudWatch alarms are triggered.
 
 # Project 1: Scalable Web Application with ALB and Auto Scaling
 
-## 📖 Overview
+##  Overview
 This project demonstrates how to deploy a **highly available and scalable web application** on AWS using **EC2 instances, Application Load Balancer (ALB), and Auto Scaling Groups (ASG)**. It follows AWS best practices for compute scalability, monitoring, and cost optimization.
 
 ---
@@ -127,5 +130,5 @@ This project demonstrates how to deploy a **highly available and scalable web ap
 
 
 
-
-
+## Author
+**Mansour Ahmed Masour**  

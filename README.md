@@ -1,16 +1,16 @@
 # aws-scalable-webapp-project
 
-| Requirement                         | Present in Diagram | Description                                                                                    |
-| ----------------------------------- | ------------------ | ---------------------------------------------------------------------------------------------- |
-| **EC2 instances**                   |                   | Two EC2 A1 instances inside the Auto Scaling Group (ASG) represent scalable compute resources. |
-| **Auto Scaling Group (ASG)**        |                   | Automatically adjusts the number of EC2 instances based on demand.                             |
-| **Application Load Balancer (ALB)** |                   | Distributes incoming traffic evenly among the EC2 instances for high availability.             |
-| **Amazon RDS (optional)**           |                   | Centralized managed database for the web app (MySQL/PostgreSQL).                               |
-| **IAM**                             |                   | Manages role-based access control for EC2 and other AWS services.                              |
-| **CloudWatch**                      |                   | Monitors system metrics (CPU, memory, etc.) for EC2 and RDS.                                   |
-| **SNS**                             |                   | Sends alerts triggered by CloudWatch metrics.                                                  |
-| **High Availability & Scalability** |                   | Achieved through ALB + ASG combination.                                                        |
-| **Monitoring & Alerts**             |                   | CloudWatch + SNS integration ensures proactive monitoring.                                     |
+| Requirement                         |  Description                                                                                   |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **EC2 instances**                   | Two EC2 A1 instances inside the Auto Scaling Group (ASG) represent scalable compute resources. |
+| **Auto Scaling Group (ASG)**        | Automatically adjusts the number of EC2 instances based on demand.                             |
+| **Application Load Balancer (ALB)** | Distributes incoming traffic evenly among the EC2 instances for high availability.             |
+| **Amazon RDS (optional)**           | Centralized managed database for the web app (MySQL/PostgreSQL).                               |
+| **IAM**                             | Manages role-based access control for EC2 and other AWS services.                              |
+| **CloudWatch**                      | Monitors system metrics (CPU, memory, etc.) for EC2 and RDS.                                   |
+| **SNS**                             | Sends alerts triggered by CloudWatch metrics.                                                  |
+| **High Availability & Scalability** | Achieved through ALB + ASG combination.                                                        |
+| **Monitoring & Alerts**             | CloudWatch + SNS integration ensures proactive monitoring.                                     |
 ####################################
 Explanation of Each Component
 
